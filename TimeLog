@@ -1,4 +1,6 @@
 Yeah, I kinda forgot about this. I'm not brilliant at remembering this sort of thing, and TBH I tend to work erratically anyway. 
 I start this record on 3/7. There was quite a bit of work before that, including like 7 hours just creating the dataset, but I'm not sure when it was.
 
-3/7: 5:25pm -> 6:50pm
+3/7: 5:25pm -> 6:50pm; worked primarily on ironing out data and converting the strings into usable lists. 
+     7:40pm -> 8:40pm; spent a long time failing to put the string->list conversion into a function without really breaking it. Didn't succeed, going to have 
+                       to go back to how I was doing it I think. It's sloppy, and repeats the same code a ton, but at least it works. 
