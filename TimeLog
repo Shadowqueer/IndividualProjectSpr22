@@ -4,3 +4,9 @@ I start this record on 3/7. There was quite a bit of work before that, including
 3/7: 5:25pm -> 6:50pm; worked primarily on ironing out data and converting the strings into usable lists. 
      7:40pm -> 8:40pm; spent a long time failing to put the string->list conversion into a function without really breaking it. Didn't succeed, going to have 
                        to go back to how I was doing it I think. It's sloppy, and repeats the same code a ton, but at least it works. 
+
+3/8: 4:35pm -> 6:05pm; found solution to conversion function. I would have sworn I tried that last night. Whatever, it works now, got started on embedding 
+                       it into greater setup function. Spend a lot of time working on Shiny UI and figuring out what and how to visulize with the extremely 
+                       unusual dataset I've locked myself into. Mostly going to be percentage-based things (which is stunningly hard, turns out), but I have 
+                       some ideas outside of that. Character Crossover, mostly. Script comparison and/or in play comparison. 
+                       Note to self: need to update dataset, there have been more archives since I last.
