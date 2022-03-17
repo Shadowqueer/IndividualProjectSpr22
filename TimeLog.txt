@@ -28,3 +28,8 @@ I start this record on 3/7. There was quite a bit of work before that, including
                        custom scripts. Also, a quick something about what the Drunk/Marionette thinks they are. 
                        It's been a really rough week and a half, and it isn't close to over yet. I still have a 7 page paper to write. 
                        NOTE: Need to write out the scripts currently labeled as TPI
+3/16:8:00pm -> 2:00am; Yep, It's late, but it was always likely. I only had two days since I actually got the medical issue resolved. I was then reminded why I
+to 3/17                allocated more time to recording the video originally. I suck at concise speaking, especially with a time limit. Github decided to be a 
+                       pain immediately after, which was kind, so I had to download the app version to upload the video properly. Spent a ton of time going over
+                       documentation of the code, forgot about documentation for the project until it was too late. Well, whatever, it's done-ish now. 
+                       This log ain't gonna look reasonable, but I basically had 2 days instead of a week and a weekend; it was never going to look good.
