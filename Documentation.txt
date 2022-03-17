@@ -1,28 +1,41 @@
 What is its purpose?
-The purpose of this program is to visualize trends in games of Blood on the Clocktower. The primary trends it visualizes are how often given character(s) are in play (together) when they are are on a script (together), and who wins a given script most often and why. 
+  The purpose of this program is to visualize trends in games of Blood on the Clocktower. The primary trends it visualizes are how often given character(s) are in play (together) when they are are on a script (together), and who wins a given script most often and why. 
 Data description
-The Data is a collection of many pieces of information about all the archived Text Games on the Blood on the Clocktower Unofficial Discord. Most of the data isn't even used. Some columns are empty, because I haven't gotten to filling them yet; none I use for this project, of course.
+  The Data is a collection of many pieces of information about all the archived Text Games on the Blood on the Clocktower Unofficial Discord. Most of the data isn't even used. Some columns are empty, because I haven't gotten to filling them yet; none I use for this project, of course.
 How was the data collected?
-I painstakingly went through each and every archived text game and extracted the information by hand. It took about 5 hours, and at least 2 more double-checking and going over the data.
+  I painstakingly went through each and every archived text game and extracted the information by hand. It took about 5 hours, and at least 2 more double-checking and going over the data.
 Who are the users that this visualization was made for?
-The users are any players of the game who are interested in trends in these text games. I suspect it will be of interest to many prolific text game players, and especially prolific text game Storytellers (Game-Runners).
-I also suspect that this will be of interest to scriptmakers, as it can (in theory) show them information about their scripts, allowing them to better refine it. It would probably need more data though.
+  The users are any players of the game who are interested in trends in these text games. I suspect it will be of interest to many prolific text game players, and especially prolific text game Storytellers (Game-Runners).
+  I also suspect that this will be of interest to script creators, as it can (in theory) show them information about their scripts, allowing them to better refine it. It would probably need more data though.
 What questions are you trying to answer? What works?
-I was moreso trying to see how often characters are put in games together, to see if that pointed out any interesting patterns. It was a more exploritory visualization, intended to allow one to stumble across trends. I think this came out pretty good, though there's room for improvement.
-I was, however, also trying to answer "who wins a given script most often, and why?", which I think has worked out extremely well. 
+  I was moreso trying to see how often characters are put in games together, to see if that pointed out any interesting patterns. It was a more exploritory visualization, intended to allow one to stumble across trends. I think this came out pretty good, though there's room for improvement.
+  I was, however, also trying to answer "who wins a given script most often, and why?", which I think has worked out extremely well. 
 What insights did you get from your data?
-A big one I noticed was that Trouble Brewing, often considered the most balanced script, has heavily favored Evil in these text games. This may point at a point of difference between live games and text games. 
+  A big one I noticed was that Trouble Brewing, often considered the most balanced script, has heavily favored Evil in these text games. This may point at a point of difference between live games and text games. 
+  I'll honestly need to play around with the tools I've made more before I think I'll get a lot of insight out of them.
 What needs improvement?
-The UI and appearence is plain, and a bit clunky at times. There's a lot that could be done to make it look better, and more interesting. 
-There are certain shorthands in the data that I didn't have time to remove fully. I did most, but not all. 
-I need to work on what to do when Good/Evil has never won a particular script. ATM I just made the plot not show up, but I'd rather it not take up space, which it does.
-I'd like to make the Wins by Script page cleaner, add more options, remove some plots.
+  The UI and appearence is plain, and a bit clunky at times. There's a lot that could be done to make it look better, and more interesting. 
+  There are certain shorthands in the data that I didn't have time to remove fully. I did most, but not all. 
+  I need to work on what to do when Good/Evil has never won a particular script. ATM I just made the plot not show up, but I'd rather it not take up space, which it does.
+  I'd like to make the Wins by Script page cleaner, add more options, remove some plots.
+  The small dataset makes finding any trends pretty difficult outside of maybe Trouble Brewing. 
 Sources or References (with appropriate credits)
-(Do I need to Cite R4DS and Intro to Shiny? I assume they're auto-cited, as the class textbooks. I didn't copy code from them of course, or I would cite that specifically)
+  (Do I need to the textbooks? . I didn't copy code from them of course, or I would cite that specifically, but for general ideas?)
 
-https://thomasadventure.blog/posts/ggplot2-percentage-scale/ 
-Taught me how to do percentage symbols in my bar graph scales. 
+  https://thomasadventure.blog/posts/ggplot2-percentage-scale/ 
+  Taught me how to do percentage symbols in my bar graph scales. 
 
 Describing the process and development to make your work reproducible, for example, tidying data.
+  There wasn't really any tidying to be done for my data, as I was the one who created it, I controlled the format from the very beginning, and was (mostly) able to seperate out what was needed. 
+  The biggest point of development time was developing how to work with strings, specifically the Comma-Seperated lists that I made use of to store lists of characters (such as Script Composition, Townsfolk In Play, Demon Bluffs, etc). A massive amount of dev time went into a function I didn't end up needing for the final product (though I suspect I will have use for it if/when I choose to add more features), specifically creating new "columns" (actually lists in the dataframe) of the characters seperated out. In the end, I just made liberal use of string_detect (and stringDetectAllList, a function I made), and for the purposes I needed, it worked out.
+  In fairness, those Comma-Seperated lists inside strings may not be strictly Tidy per Tidyverse rules, but it's better than having at minimum 15 more columns, and is somehow less clunky; also, it makes the data far more understandable as an excel file. 
 
 Description of design decisions (encoding/mapping). Use the taxonomy of the what-why-how analysis framework presented by Tamara Munzner.
+  What:
+    The data I looked at is a Table type Dataset, consisting of discrete games and properties about those games. Every game is completely independent (for our purposes) from all others, and there is no connection between them. And the data is entirely discrete, there isn't a single continuous thing I can think of in it. Inside the data there are a lot of lists, too, but those are lists inside an attribute of an item. 
+    The data I looked at is almost entirely catagorical in nature. There are a few numbers in there, though not many. They aren't without groups, however. Characters (lists of which make up the bulk of the data) can be subdivided into groups. Certain attributes are subsets or supersets of others.
+  Why:
+    My goals for this, and the driving goal behind all of my decisions, was analysis of the data, specifically what Munzer calls consumption analysis. It falls under the catagories of Consumption of Discover and Enjoy, because this is data about a board game; in the end, it's just for the fans to have fun with, looking at trends and common occurences, while more hard-core fans can dig deeper in and look at patterns and use what they find to formulate new ideas about this game.
+  How:
+    I went about this by thinking about what I, as a hardcore fan of the game, would want to be able to see; what things I find myself wondering about. The visualizations needed to be simple, honestly, because the amount of different catagorical items in this data could become overwhelming extremely quickly. There are nearly two hundred characters in this game, and a visualization of even the 25 on a single normal script could get illegibally messy. Thus, I wanted to answer questions simply. Percentages were my primary plan going into this, and I stand by that decision. They aren't good at giving exact numbers, but I didn't really have exact numbers anyway. 
+    I was actually originally planning to use pie charts, but Munzer (and others) make their opinions on those rather clear, so the stacked bar chart I use so many times was the recommended course of action. 
