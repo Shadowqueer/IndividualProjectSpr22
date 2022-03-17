@@ -1,0 +1,28 @@
+What is its purpose?
+The purpose of this program is to visualize trends in games of Blood on the Clocktower. The primary trends it visualizes are how often given character(s) are in play (together) when they are are on a script (together), and who wins a given script most often and why. 
+Data description
+The Data is a collection of many pieces of information about all the archived Text Games on the Blood on the Clocktower Unofficial Discord. Most of the data isn't even used. Some columns are empty, because I haven't gotten to filling them yet; none I use for this project, of course.
+How was the data collected?
+I painstakingly went through each and every archived text game and extracted the information by hand. It took about 5 hours, and at least 2 more double-checking and going over the data.
+Who are the users that this visualization was made for?
+The users are any players of the game who are interested in trends in these text games. I suspect it will be of interest to many prolific text game players, and especially prolific text game Storytellers (Game-Runners).
+I also suspect that this will be of interest to scriptmakers, as it can (in theory) show them information about their scripts, allowing them to better refine it. It would probably need more data though.
+What questions are you trying to answer? What works?
+I was moreso trying to see how often characters are put in games together, to see if that pointed out any interesting patterns. It was a more exploritory visualization, intended to allow one to stumble across trends. I think this came out pretty good, though there's room for improvement.
+I was, however, also trying to answer "who wins a given script most often, and why?", which I think has worked out extremely well. 
+What insights did you get from your data?
+A big one I noticed was that Trouble Brewing, often considered the most balanced script, has heavily favored Evil in these text games. This may point at a point of difference between live games and text games. 
+What needs improvement?
+The UI and appearence is plain, and a bit clunky at times. There's a lot that could be done to make it look better, and more interesting. 
+There are certain shorthands in the data that I didn't have time to remove fully. I did most, but not all. 
+I need to work on what to do when Good/Evil has never won a particular script. ATM I just made the plot not show up, but I'd rather it not take up space, which it does.
+I'd like to make the Wins by Script page cleaner, add more options, remove some plots.
+Sources or References (with appropriate credits)
+(Do I need to Cite R4DS and Intro to Shiny? I assume they're auto-cited, as the class textbooks. I didn't copy code from them of course, or I would cite that specifically)
+
+https://thomasadventure.blog/posts/ggplot2-percentage-scale/ 
+Taught me how to do percentage symbols in my bar graph scales. 
+
+Describing the process and development to make your work reproducible, for example, tidying data.
+
+Description of design decisions (encoding/mapping). Use the taxonomy of the what-why-how analysis framework presented by Tamara Munzner.
